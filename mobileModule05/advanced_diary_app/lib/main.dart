@@ -5,6 +5,7 @@ import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'profile_page.dart';
+import 'home_page.dart';
 
 void main() async {
   // Ensure Flutter bindings are initialized before Firebase
@@ -41,7 +42,7 @@ class _DairyAppState extends State<DairyApp> {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const ProfilePage();
+          return HomePage();
         }
         return Scaffold(
           backgroundColor: const Color.fromARGB(255, 255, 247, 210),
